@@ -1,0 +1,11 @@
+<div class="container">
+	<h1><%= @animal.title %></h1>
+	<p>This <%= @animal.title %> is <%= @animal.age %> years old!</p>
+	<p><%= image_tag @animal.url %></p>
+	<p><%= link_to 'Edit', edit_animal_path(@animal) %> | <%= link_to 'Destroy', animal_path(@animal),
+	              method: :delete,
+	              data: { confirm: 'Are you sure?' } %></p>
+	<div class="btn-group">
+		<p><%= link_to 'All animals', animals_path, class: 'btn btn-primary' %></p>
+	</div>
+</div>

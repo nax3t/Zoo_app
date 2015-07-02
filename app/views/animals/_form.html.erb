@@ -1,0 +1,23 @@
+<%= simple_form_for(@animal, html: { class: 'form-horizontal' }) do |f| %>
+
+	<% if @animal.errors.any? %>
+	   <div id="error_explanation">
+	     <h2>
+	       <%= pluralize(@animal.errors.count, "error") %> prohibited
+	       this animal from being saved:
+	     </h2>
+	     <ul>
+	       <% @animal.errors.full_messages.each do |msg| %>
+	         <li><%= msg %></li>
+	       <% end %>
+	     </ul>
+	   </div>
+	 <% end %>
+
+	<%= f.input :title %>
+	<%= f.input :age %>
+	<%= f.input :url %>
+
+	<p><%= f.button(:submit, class: "btn btn-primary") %></p>
+	<p><%= link_to 'Back', animals_path, class: 'btn btn-primary' %></p>
+<% end %>
